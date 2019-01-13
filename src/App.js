@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component  } from 'react';
 import './App.css';
 import List from './components/List/List';
+import { MDBBtn , MDBInput } from "mdbreact";
 
 export default class App extends Component {
     constructor(props) {
@@ -26,9 +27,9 @@ export default class App extends Component {
     render() {
       return (
         <div>
-          <form className="App" onSubmit={this.onSubmit}>
-            <input value={this.state.term} onChange={this.onChange} />
-            <button>Submit</button>
+          <form className="App" style={{margin: "auto", width: "50%", border: "3px solid white", padding: "10px"  }} onSubmit={this.onSubmit}>
+          <MDBInput label="Add Todo"  value={this.state.term} onChange={this.onChange} />
+            <MDBBtn rounded outline color='info' >Update</MDBBtn>
           </form>
           <List items={this.state.items} />
         </div>
